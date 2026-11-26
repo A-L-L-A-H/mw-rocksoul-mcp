@@ -1,0 +1,28 @@
+{
+  "name": "@moonwitness/rocksoul-mcp",
+  "version": "1.0.0",
+  "description": "RockSoul Standalone MCP Host & HTTP-Only MoonWitness Ecosystem Connectors (Zero-ORM)",
+  "type": "module",
+  "engines": {
+    "bun": ">=1.2.0",
+    "node": ">=22.0.0"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./server": "./src/server.ts",
+    "./connectors": "./src/connectors.ts",
+    "./registry": "./src/server-registry.ts"
+  },
+  "scripts": {
+    "start": "bun run src/server.ts",
+    "start:stdio": "bun run src/server.ts --stdio",
+    "test": "bun test",
+    "check:zero-orm": "node scripts/check-zero-orm-imports.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "^1.2.15",
+    "typescript": "~5.7.3"
+  }
+}
