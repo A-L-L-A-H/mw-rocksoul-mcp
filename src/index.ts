@@ -59,3 +59,5 @@ export {
   type McpServerConfig,
   type RunningMcpHttpServer,
 } from './server.js';
+
+export { registerFreeTierTools, type FreeTierToolsOptions } from './free-tools.js';

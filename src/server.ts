@@ -13,6 +13,7 @@ import {
   McpServerRegistry,
   type McpDispatchContext,
 } from './server-registry.js';
+import { registerFreeTierTools, type FreeTierToolsOptions } from './free-tools.js';
 
 export const DEFAULT_MCP_PORT = 4530;
 export const DEFAULT_MCP_HOST = '127.0.0.1';
@@ -115,10 +116,12 @@ export function extractBearerToken(authorizationHeader: string | null | undefine
 export function createMcpApplication(options: {
   readonly connectors?: EcosystemConnectorsOptions;
   readonly registry?: McpServerRegistry;
+  readonly freeTools?: FreeTierToolsOptions;
 } = {}): McpApplication {
   const connectors = new EcosystemConnectors(options.connectors);
   const registry = options.registry ?? new McpServerRegistry();
   registerEcosystemTools(registry, connectors);
+  registerFreeTierTools(registry, options.freeTools);
   return {
     registry,
     connectors,
