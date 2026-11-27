@@ -61,3 +61,6 @@ export {
 } from './server.js';
 
 export { registerFreeTierTools, type FreeTierToolsOptions } from './free-tools.js';
+export { registerEpistemicTools, type EpistemicToolsOptions } from './epistemic-tools.js';
+export { registerTaskOSBridgeTools, type TaskOSBridgeOptions } from './taskos-bridge.js';
+
